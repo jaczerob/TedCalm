@@ -27,7 +27,7 @@ public class LoginHttpClientProvider implements LoginProvider {
     String loginURI;
 
     public LoginResponse login(final LoginRequest loginRequest) throws IOException, InterruptedException {
-        Log.infof("Logging in with request: %s", loginRequest);
+        Log.debugf("Logging in with request: %s", loginRequest);
 
         final HttpRequest httpRequest = HttpRequest.newBuilder(URI.create(loginURI))
                 .header("User-Agent", "jaczerob/tedcalm")
@@ -39,7 +39,7 @@ public class LoginHttpClientProvider implements LoginProvider {
         final HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         final LoginResponse loginResponse = objectMapper.readValue(response.body(), LoginResponse.class);
 
-        Log.infof("Got login response: %s", loginResponse);
+        Log.debugf("Got login response: %s", loginResponse);
 
         return loginResponse;
     }
