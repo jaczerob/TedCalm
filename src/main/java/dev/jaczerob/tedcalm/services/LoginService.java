@@ -38,7 +38,7 @@ public class LoginService {
             }
         }
 
-        Log.infof("Logging you into Toontown! Gameserver: %s, Cookie: %s", this.gameserver, this.cookie);
+        Log.info("Logging you into Toontown!");
         launcherService.launch(this.gameserver, this.cookie);
     }
 

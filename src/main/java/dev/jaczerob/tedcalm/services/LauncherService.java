@@ -26,7 +26,7 @@ public class LauncherService {
         processBuilder.environment().put("TTR_GAMESERVER", gameserver);
         processBuilder.environment().put("TTR_PLAYCOOKIE", cookie);
 
-        Log.infof("Launching Toontown");
+        Log.infof("Launching Toontown!");
         Log.debugf("Directory: %s, gameserver: %s, cookie: %s", toontownPath.getParent(), gameserver, cookie);
 
         try {
